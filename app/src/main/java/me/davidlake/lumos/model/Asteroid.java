@@ -1,9 +1,11 @@
 package me.davidlake.lumos.model;
 
+import com.google.gson.JsonArray;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
+import java.util.Map;
 
 public class Asteroid {
     @SerializedName("links")
@@ -45,6 +47,20 @@ public class Asteroid {
     @SerializedName("is_sentry_object")
     @Expose
     private boolean isSentryObject;
+}
+
+class JSON {
+    @SerializedName("links")
+    @Expose
+    public Links links;
+
+    @SerializedName("element_count")
+    @Expose
+    public Integer elementCount;
+
+    @SerializedName("near_earth_objects")
+    @Expose
+    private Map<String, JsonArray> nearEarthObjects;
 }
 
 class Links {
