@@ -11,16 +11,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import java.io.IOException;
 
 public final class NeoApi {
-
     private final Retrofit retrofit;
-
     private final AsteroidService asteroidService;
-
     private final String apiKey;
-
-    private int rateLimit = -1;
-
-    private int rateLimitRemaining = -1;
 
     public NeoApi() {
         this("");
@@ -41,16 +34,6 @@ public final class NeoApi {
     private <T> T get(final Call<T> call) throws IOException {
         final Response<T> response = call.execute();
         final Headers headers = response.headers();
-        rateLimit = Integer.parseInt(headers.get("X-RateLimit-Limit"));
-        rateLimitRemaining = Integer.parseInt(headers.get("X-RateLimit-Remaining"));
         return response.body();
-    }
-
-    public int getRateLimit() {
-        return rateLimit;
-    }
-
-    public int getRateLimitRemaining() {
-        return rateLimitRemaining;
     }
 }

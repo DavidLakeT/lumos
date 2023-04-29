@@ -1,5 +1,11 @@
 package me.davidlake.lumos.model.asteroid;
 
+import androidx.room.Entity;
+import androidx.room.TypeConverter;
+
+import com.google.gson.Gson;
+
+@Entity
 public final class Links {
     private String next;
     private String prev;
