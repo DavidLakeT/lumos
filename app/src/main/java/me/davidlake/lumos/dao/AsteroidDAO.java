@@ -24,4 +24,7 @@ public interface AsteroidDAO {
 
     @Query("SELECT * FROM asteroids")
     List<User> getAll();
+
+    @Query("SELECT * FROM asteroids WHERE id = :id")
+    Asteroid getById(String id);
 }

@@ -1,6 +1,5 @@
-package me.davidlake.lumos;
+package me.davidlake.lumos.activities;
 
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.IOException;
 import java.util.List;
 
+import me.davidlake.lumos.MainApp;
+import me.davidlake.lumos.R;
 import me.davidlake.lumos.model.asteroid.Asteroid;
 import me.davidlake.lumos.model.asteroid.AsteroidFeed;
 import me.davidlake.lumos.network.NeoApi;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         NeoApi neoApi = new NeoApi("HqdaBGHMcKg9hKjlWK6HyjrkWrw0DKgNV9R5vmA4");
 
-        Log.d("DEBUG", "MESSAGE");
+        MainApp app = (MainApp) getApplicationContext();
 
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -36,7 +37,9 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     AsteroidFeed asteroidFeed = neoApi.getAsteroidFeed("2023-04-29", "2023-05-06");
                     for (Asteroid asteroid : asteroidFeed.getAsteroids().get("2023-04-29")) {
-
+                        Log.d("DAVID-DEBUG", "ID A REGISTRAR: " + asteroid.getId());
+                        app.room.asteroidDao().insert(asteroid);
+                        Log.d("DAVID-DEBUG", "ID REGISTRADO: " + app.room.asteroidDao().getById(asteroid.getId()).getId());
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -50,9 +53,6 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     AsteroidFeed asteroidFeed = neoApi.getAsteroidFeed("2023-04-29", "2023-05-06");
                     List<Asteroid> asteroids = asteroidFeed.getAsteroids().get("2023-04-29");
-                    AsteroidDatabase db = AsteroidDatabase.getInstance(context); // inicializa tu base de datos
-                    AsteroidDAO asteroidDAO = db.asteroidDAO(); // inicializa tu DAO
-                    asteroidDAO.insertAll(asteroids.toArray(new Asteroid[0])); // inserta los asteroides en la base de datos
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
