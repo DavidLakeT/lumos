@@ -14,7 +14,7 @@ public class Asteroid {
     @Expose
     private String id;
 
-    @SerializedName("id")
+    @SerializedName("neo_reference_id")
     @Expose
     private String neoReferenceId;
 
@@ -42,7 +42,7 @@ public class Asteroid {
     @Expose
     private List<CloseApproachData> closeApproachData;
 
-    @SerializedName("orbital_data")
+    @SerializedName("is_sentry_object")
     @Expose
     private boolean isSentryObject;
 }
