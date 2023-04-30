@@ -5,11 +5,18 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
+import me.davidlake.lumos.model.asteroid.converter.CloseApproachDataConverter;
+import me.davidlake.lumos.model.asteroid.converter.EstimatedDiameterConverter;
+import me.davidlake.lumos.model.asteroid.converter.LinksConverter;
+
 @Entity(tableName = "asteroids")
+@TypeConverters({EstimatedDiameterConverter.class, CloseApproachDataConverter.class, LinksConverter.class})
 public final class Asteroid {
 
     public Asteroid (
