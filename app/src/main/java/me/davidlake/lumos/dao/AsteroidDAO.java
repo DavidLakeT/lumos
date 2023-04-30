@@ -19,6 +19,9 @@ public interface AsteroidDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(Asteroid asteroid);
 
+    @Query("DELETE FROM asteroids")
+    void deleteAll();
+
     @Delete
     void delete(Asteroid asteroid);
 

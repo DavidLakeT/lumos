@@ -14,8 +14,9 @@ import java.util.List;
 import me.davidlake.lumos.model.asteroid.converter.CloseApproachDataConverter;
 import me.davidlake.lumos.model.asteroid.converter.EstimatedDiameterConverter;
 import me.davidlake.lumos.model.asteroid.converter.LinksConverter;
+import me.davidlake.lumos.model.user.User;
 
-@Entity(tableName = "asteroids")
+@Entity(tableName = "asteroids", foreignKeys = @ForeignKey(entity = User.class, parentColumns = "id", childColumns = "user_id"))
 @TypeConverters({EstimatedDiameterConverter.class, CloseApproachDataConverter.class, LinksConverter.class})
 public class Asteroid {
 
@@ -42,6 +43,9 @@ public class Asteroid {
         this.closeApproachData = closeApproachData;
         this.isSentryObject = isSentryObject;
     }
+
+    @ColumnInfo(name = "user_id")
+    private int userId;
 
     @PrimaryKey
     @NonNull
@@ -92,6 +96,7 @@ public class Asteroid {
     public String getId() {
         return id;
     }
+    public int getUserId() { return userId; }
     public Links getLinks() {
         return links;
     }
@@ -123,6 +128,7 @@ public class Asteroid {
     // SETTERS
 
     public void setId(@NonNull String id) { this.id = id; }
+    public void setUserId(int userId) { this.userId = userId; }
     public void setLinks(Links links) { this.links = links; }
     public void setNeoReferenceId(String neoReferenceId) { this.neoReferenceId = neoReferenceId; }
     public void setName(String name) { this.name = name; }

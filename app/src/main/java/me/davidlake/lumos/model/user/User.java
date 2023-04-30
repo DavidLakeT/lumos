@@ -1,7 +1,12 @@
 package me.davidlake.lumos.model.user;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+
+import java.util.List;
+
+import me.davidlake.lumos.model.asteroid.Asteroid;
 
 @Entity(tableName = "users")
 public class User {
@@ -13,6 +18,9 @@ public class User {
     private String firstName;
     private String lastName;
     private String createdAt;
+
+    @Ignore
+    private List<Asteroid> asteroids;
 
     // CONSTRUCTOR
 
@@ -40,6 +48,7 @@ public class User {
     public String getFirstName() { return firstName; }
     public String getLastName() { return lastName; }
     public String getCreatedAt() { return createdAt; }
+    public List<Asteroid> getAsteroids() { return asteroids; }
 
     // SETTERS
 
@@ -49,4 +58,5 @@ public class User {
     public void setFirstName(String firstName) { this.firstName = firstName; }
     public void setLastName(String lastName) { this.lastName = lastName; }
     public void setCreatedAt(String createdAt) { this.createdAt = createdAt; }
+    public void setAsteroids(List<Asteroid> asteroids) { this.asteroids = asteroids; }
 }

@@ -5,10 +5,12 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Transaction;
 
 import java.util.List;
 
 import me.davidlake.lumos.model.user.User;
+import me.davidlake.lumos.model.utils.UserAsteroids;
 
 @Dao
 public interface UserDAO {
@@ -18,6 +20,9 @@ public interface UserDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(User user);
 
+    @Query("DELETE FROM users")
+    void deleteAll();
+
     @Delete
     void delete(User user);
 
@@ -26,4 +31,8 @@ public interface UserDAO {
 
     @Query("SELECT * FROM users WHERE id = :id")
     User getById(int id);
+
+    @Transaction
+    @Query("SELECT * FROM users")
+    List<UserAsteroids> getUsersWithAsteroids();
 }

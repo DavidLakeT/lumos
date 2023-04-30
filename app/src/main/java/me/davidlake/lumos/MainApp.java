@@ -15,7 +15,7 @@ public class MainApp extends Application {
     public void onCreate() {
         super.onCreate();
 
-        database = Room.databaseBuilder(this, Database.class, "asteroids").build();
+        database = Room.databaseBuilder(this, Database.class, "database").build();
         neoApi = new NeoApi("HqdaBGHMcKg9hKjlWK6HyjrkWrw0DKgNV9R5vmA4");
     }
 

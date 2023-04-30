@@ -12,24 +12,23 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:fontFamily="serif-monospace"
-        android:text="LOGIN"
+        android:text="SIGNUP"
         android:textColor="#df7154"
         android:textSize="55sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
-        android:layout_marginTop="92dp"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/logo_astronaut" />
+        app:srcCompat="@drawable/logo_asteroid" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -51,7 +50,22 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
             android:ems="10"
-            android:hint="Username"
+            android:hint="Email"
+            android:inputType="textPersonName"
+            android:paddingStart="20dp"
+            android:textColorHint="#464646" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/edittext_background"
+            android:ems="10"
+            android:hint="Password"
             android:inputType="textPersonName"
             android:paddingStart="20dp"
             android:textColorHint="#464646" />
@@ -66,47 +80,25 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
             android:ems="10"
-            android:hint="Password"
+            android:hint="Identification ID"
             android:inputType="textPersonName"
             android:paddingStart="20dp"
             android:textColorHint="#464646" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:orientation="horizontal"/>
-
         <Button
-            android:id="@+id/signin_button"
+            android:id="@+id/signup_button"
             style="@android:style/Widget.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
+
             android:layout_marginBottom="8dp"
             android:background="@drawable/btn_background"
-            android:text="Sign In"
+            android:text="SignUp"
             android:textColor="#ffffff"
             android:textSize="24sp"
             android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/register_button"
-            style="@android:style/Widget.Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="25dp"
-            android:background="@drawable/btn_register_background"
-            android:text="Sign Up"
-            android:textColor="#ffffff"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
