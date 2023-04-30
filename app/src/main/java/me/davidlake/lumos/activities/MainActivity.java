@@ -23,30 +23,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nasa);
 
-        Log.d("DAVID-DEBUG", "VISTA CARGADA CORRECTAMENTE");
-
         MainApp app = (MainApp) getApplication();
         NeoApi neoApi = app.getNeoApi();
-        AsteroidDatabase room = app.getDatabase();
-
-        Log.d("DAVID-DEBUG", "CONTEXTO CARGADO CORRECTAMENTE");
+        AsteroidDatabase asteroidDatabase = app.getDatabase();
 
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    AsteroidFeed asteroidFeed = neoApi.getAsteroidFeed("2023-04-29", "2023-05-06");
-                    Log.d("DAVID-DEBUG", "YA DEBERÍA EMPEZAR A IMPRIMIR...");
-                    for (Asteroid asteroid : asteroidFeed.getAsteroids().get("2023-04-29")) {
-                        Log.d("DAVID-DEBUG", "ID A REGISTRAR: " + asteroid.getId());
-                        room.asteroidDao().insert(asteroid);
-                        Log.d("DAVID-DEBUG", "ID REGISTRADO: " + room.asteroidDao().getById(asteroid.getId()).getId());
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            AsteroidFeed asteroidFeed = neoApi.getAsteroidFeed("2023-04-29", "2023-05-06");
+                            for (Asteroid asteroid : asteroidFeed.getAsteroids().get("2023-04-29")) {
+                                asteroidDatabase.asteroidDao().insert(asteroid);
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                }).start();
             }
         });
+
     }
 }
