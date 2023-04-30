@@ -17,7 +17,7 @@ import me.davidlake.lumos.model.asteroid.converter.LinksConverter;
 
 @Entity(tableName = "asteroids")
 @TypeConverters({EstimatedDiameterConverter.class, CloseApproachDataConverter.class, LinksConverter.class})
-public final class Asteroid {
+public class Asteroid {
 
     public Asteroid (
             @NonNull String id,

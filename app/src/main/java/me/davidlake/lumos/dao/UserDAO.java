@@ -9,22 +9,21 @@ import androidx.room.Query;
 import java.util.List;
 
 import me.davidlake.lumos.model.user.User;
-import me.davidlake.lumos.model.asteroid.Asteroid;
 
 @Dao
-public interface AsteroidDAO {
+public interface UserDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertAll(Asteroid... asteroids);
+    void insertAll(User... users);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert(Asteroid asteroid);
+    void insert(User user);
 
     @Delete
-    void delete(Asteroid asteroid);
+    void delete(User user);
 
-    @Query("SELECT * FROM asteroids")
+    @Query("SELECT * FROM users")
     List<User> getAll();
 
-    @Query("SELECT * FROM asteroids WHERE id = :id")
-    Asteroid getById(String id);
+    @Query("SELECT * FROM users WHERE id = :id")
+    User getById(int id);
 }
