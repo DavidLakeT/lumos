@@ -3,7 +3,9 @@ package me.davidlake.lumos.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import me.davidlake.lumos.R;
 
 public class AsteroidActivity extends AppCompatActivity {
@@ -20,6 +22,7 @@ public class AsteroidActivity extends AppCompatActivity {
         TextView isSentryObjectTextView = findViewById(R.id.asteroid_is_sentry_object);
         TextView closeApproachDateTextView = findViewById(R.id.asteroid_close_approach_date);
         TextView missDistanceTextView = findViewById(R.id.asteroid_miss_distance);
+        TextView userIdTextView = findViewById(R.id.asteroid_user_id);
 
         if (intent != null){
 
@@ -30,6 +33,7 @@ public class AsteroidActivity extends AppCompatActivity {
             String isSentryObject = intent.getStringExtra("asteroid_is_sentry_object");
             String closeApproachDate = intent.getStringExtra("asteroid_close_approach_date");
             String missDistance = intent.getStringExtra("asteroid_miss_distance");
+            String userId = intent.getStringExtra("asteroid_user_id");
 
             nameTextView.setText(name);
             idTextView.setText(id);
@@ -38,6 +42,7 @@ public class AsteroidActivity extends AppCompatActivity {
             isSentryObjectTextView.setText(isSentryObject);
             closeApproachDateTextView.setText(closeApproachDate);
             missDistanceTextView.setText(missDistance);
+            userIdTextView.setText(userId);
         }
     }
 }

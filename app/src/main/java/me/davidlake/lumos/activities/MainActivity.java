@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+
 import me.davidlake.lumos.R;
 import me.davidlake.lumos.model.utils.ListAdapter;
 import me.davidlake.lumos.viewmodel.AsteroidViewModel;
@@ -24,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.listview);
 
-        asteroidViewModel.loadAsteroids("2023-04-28", "2023-04-28");
+        asteroidViewModel.loadAsteroids(asteroidViewModel.getDate(), asteroidViewModel.getDate());
 
         asteroidViewModel.getAsteroidList().observe(this, asteroidList -> {
             ListAdapter listAdapter = new ListAdapter(MainActivity.this, asteroidList);
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("asteroid_is_sentry_object", String.valueOf(asteroidList.get(position).isSentryObject()));
                 intent.putExtra("asteroid_close_approach_date", asteroidList.get(position).getCloseApproachData().get(0).getCloseApproachDate());
                 intent.putExtra("asteroid_miss_distance", asteroidList.get(position).getCloseApproachData().get(0).getMissDistance().getKilometers());
+                intent.putExtra("asteroid_user_id", String.valueOf(asteroidList.get(position).getUserId()));
 
                 startActivity(intent);
             });

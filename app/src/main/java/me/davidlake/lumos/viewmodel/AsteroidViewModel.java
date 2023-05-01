@@ -1,15 +1,15 @@
 package me.davidlake.lumos.viewmodel;
 
 import android.app.Application;
-import android.util.Log;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+
 import java.io.IOException;
 import java.util.List;
+
 import me.davidlake.lumos.MainApp;
-import me.davidlake.lumos.dao.AsteroidDAO;
 import me.davidlake.lumos.database.Database;
 import me.davidlake.lumos.model.asteroid.Asteroid;
 import me.davidlake.lumos.model.asteroid.AsteroidFeed;
@@ -49,5 +49,9 @@ public class AsteroidViewModel extends AndroidViewModel {
                 e.printStackTrace();
             }
         }).start();
+    }
+
+    public String getDate() {
+        return app.getProperties().getProperty("INFO_DATE");
     }
 }

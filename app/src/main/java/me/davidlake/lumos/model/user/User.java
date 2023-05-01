@@ -27,14 +27,14 @@ public class User {
     public User(
             String email,
             String password,
-            //String firstName,
-            //String lastName,
+            String firstName,
+            String lastName,
             String createdAt
     ) {
         this.email = email;
         this.password = password;
-        //this.firstName = firstName;
-        //this.lastName = lastName;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.createdAt = createdAt;
     }
 

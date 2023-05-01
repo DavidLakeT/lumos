@@ -7,4 +7,21 @@
     <string name="is_sentry_object">Is sentry object?</string>
     <string name="close_approach_date">Close approach date</string>
     <string name="miss_distance">Miss distance (km)</string>
+    <string name="last_name">Last name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="identification_id">Identification ID</string>
+    <string name="signup">SignUp</string>
+    <string name="signup_title">SIGNUP</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login">LOGIN</string>
+    <string name="first_name_len_constraint">First name must be at least 3 characters long</string>
+    <string name="last_name_len_constraint">Last name must be at least 3 characters long</string>
+    <string name="valid_email_constraint">Invalid email address</string>
+    <string name="password_len_constraint">Password must be at least 8 characters long</string>
+    <string name="id_len_constraint">ID must have at least 8 digits</string>
+    <string name="invalid_credentials">Invalid credentials</string>
+    <string name="already_existing_user">User already exists</string>
+    <string name="user_id">User ID</string>
 </resources>

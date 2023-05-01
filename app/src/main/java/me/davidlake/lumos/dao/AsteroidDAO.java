@@ -8,8 +8,8 @@ import androidx.room.Query;
 
 import java.util.List;
 
-import me.davidlake.lumos.model.user.User;
 import me.davidlake.lumos.model.asteroid.Asteroid;
+import me.davidlake.lumos.model.user.User;
 
 @Dao
 public interface AsteroidDAO {

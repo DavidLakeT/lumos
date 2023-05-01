@@ -1,5 +1,7 @@
 package me.davidlake.lumos.network;
 
+import java.io.IOException;
+
 import me.davidlake.lumos.model.asteroid.AsteroidFeed;
 import me.davidlake.lumos.service.AsteroidService;
 import okhttp3.Headers;
@@ -7,8 +9,6 @@ import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
-import java.io.IOException;
 
 public final class NeoApi {
     private final Retrofit retrofit;

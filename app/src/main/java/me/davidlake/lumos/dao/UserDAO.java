@@ -1,17 +1,14 @@
 package me.davidlake.lumos.dao;
 
-import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
-import androidx.room.Transaction;
 
 import java.util.List;
 
 import me.davidlake.lumos.model.user.User;
-import me.davidlake.lumos.model.utils.UserAsteroids;
 
 @Dao
 public interface UserDAO {

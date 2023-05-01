@@ -1,10 +1,11 @@
 package me.davidlake.lumos.viewmodel;
 
 import android.app.Application;
-import android.util.Log;
+
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+
 import me.davidlake.lumos.MainApp;
 import me.davidlake.lumos.database.Database;
 import me.davidlake.lumos.model.user.User;
@@ -33,7 +34,7 @@ public class UserViewModel extends AndroidViewModel {
         return userLiveData;
     }
 
-    public LiveData<User> registerUser(String email, String password, String identificationId) {
+    public LiveData<User> registerUser(String email, String password, String firstName, String lastName, String identificationId) {
         MutableLiveData<User> userRegisteredLiveData = new MutableLiveData<>();
 
         new Thread(() -> {
@@ -41,7 +42,7 @@ public class UserViewModel extends AndroidViewModel {
             if (existingUser != null) {
                 userRegisteredLiveData.postValue(null);
             } else {
-                User user = new User(email, password, identificationId);
+                User user = new User(email, password, firstName, lastName, identificationId);
                 database.userDao().insert(user);
                 userRegisteredLiveData.postValue(database.userDao().getUserByEmail(email));
             }

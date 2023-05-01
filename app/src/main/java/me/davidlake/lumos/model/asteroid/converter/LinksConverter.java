@@ -1,6 +1,7 @@
 package me.davidlake.lumos.model.asteroid.converter;
 
 import androidx.room.TypeConverter;
+
 import com.google.gson.Gson;
 
 import me.davidlake.lumos.model.asteroid.Links;

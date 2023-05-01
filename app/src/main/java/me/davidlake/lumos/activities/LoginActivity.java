@@ -2,7 +2,6 @@ package me.davidlake.lumos.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -11,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import me.davidlake.lumos.R;
-import me.davidlake.lumos.viewmodel.AsteroidViewModel;
 import me.davidlake.lumos.viewmodel.UserViewModel;
 
 public class LoginActivity  extends AppCompatActivity {
@@ -35,13 +33,13 @@ public class LoginActivity  extends AppCompatActivity {
             String password = passwordEditText.getText().toString().trim();
 
             if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                emailEditText.setError("Invalid email address");
+                emailEditText.setError(getString(R.string.valid_email_constraint));
                 emailEditText.requestFocus();
                 return;
             }
 
             if (password.length() < 8) {
-                passwordEditText.setError("Password must be at least 8 characters long");
+                passwordEditText.setError(getString(R.string.password_len_constraint));
                 passwordEditText.requestFocus();
                 return;
             }
@@ -54,7 +52,7 @@ public class LoginActivity  extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                 } else {
-                    Toast.makeText(getApplicationContext(), "Invalid credentials", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.invalid_credentials), Toast.LENGTH_SHORT).show();
                 }
             });
 
