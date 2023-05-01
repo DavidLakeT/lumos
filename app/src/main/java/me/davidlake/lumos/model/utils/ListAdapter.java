@@ -30,12 +30,13 @@ public class ListAdapter extends ArrayAdapter<Asteroid> {
 
         TextView asteroidName = convertView.findViewById(R.id.asteroid_name);
         TextView asteroidId = convertView.findViewById(R.id.asteroid_id);
-        TextView estimatedDiameter = convertView.findViewById(R.id.asteroid_diameter);
+        TextView asteroidEstimatedDiameter = convertView.findViewById(R.id.asteroid_diameter);
+        TextView asteroidIsDangerous = convertView.findViewById(R.id.asteroid_is_dangerous);
 
-        asteroidName.setText(asteroid.getName());
-        asteroidId.setText(asteroid.getId());
-        estimatedDiameter.setText(asteroid.getEstimatedDiameter().getKilometers().getEstimatedDiameterMax());
-
+        asteroidName.setText("Name: " + asteroid.getName());
+        asteroidId.setText("ID: " + asteroid.getId());
+        asteroidEstimatedDiameter.setText("Max diameter (km): " + asteroid.getEstimatedDiameter().getKilometers().getEstimatedDiameterMax());
+        asteroidIsDangerous.setText("Is dangerous: " + String.valueOf(asteroid.isPotentiallyHazardousAsteroid()));
 
         return convertView;
     }

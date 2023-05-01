@@ -16,19 +16,15 @@ public class LoginActivity  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Log.d("DAVID-DEBUG", "HOLA DESDE LOGIN");
-
         Button signin_button = findViewById(R.id.signin_button);
         Button signup_button = findViewById(R.id.register_button);
 
         signin_button.setOnClickListener(v -> {
-            Log.d("DAVID-DEBUG", "BOTON DE INICIO DE SESION PRESIONADO");
             //Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             //startActivity(intent);
         });
 
         signup_button.setOnClickListener(v -> {
-            Log.d("DAVID-DEBUG", "BOTON DE REGISTRO PRESIONADO");
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(intent);
         });

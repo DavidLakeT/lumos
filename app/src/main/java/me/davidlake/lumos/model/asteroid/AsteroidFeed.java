@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 public final class AsteroidFeed {
-
     private Links links;
     @SerializedName("element_count")
     private int elementCount;

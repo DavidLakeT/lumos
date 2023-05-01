@@ -1,9 +1,7 @@
 package me.davidlake.lumos;
 
 import android.app.Application;
-
 import androidx.room.Room;
-
 import me.davidlake.lumos.database.Database;
 import me.davidlake.lumos.network.NeoApi;
 

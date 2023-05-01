@@ -1,7 +1,6 @@
 package me.davidlake.lumos.viewmodel;
 
 import android.app.Application;
-
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -15,14 +14,13 @@ import me.davidlake.lumos.network.NeoApi;
 
 public class AsteroidViewModel extends AndroidViewModel {
     private MutableLiveData<List<Asteroid>> asteroidList = new MutableLiveData<>();
-    private NeoApi neoApi;
-    private Database database;
+    private final NeoApi neoApi;
 
     public AsteroidViewModel(Application application) {
         super(application);
         MainApp app = (MainApp) application;
         neoApi = app.getNeoApi();
-        database = app.getDatabase();
+        Database database = app.getDatabase();
     }
 
     public LiveData<List<Asteroid>> getAsteroidList() {

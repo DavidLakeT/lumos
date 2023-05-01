@@ -21,7 +21,6 @@
                 android:layout_marginStart="20dp"
                 android:src="@drawable/logo_asteroid"/>
 
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -34,7 +33,7 @@
                     android:layout_height="wrap_content"
                     android:text="Asteroid Name"
                     android:textColor="@color/black"
-                    android:textSize="22sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"/>
 
                 <TextView
@@ -51,6 +50,14 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="8dp"
                     android:text="Asteroid Diameter" />
+
+                <TextView
+                    android:id="@+id/asteroid_is_dangerous"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="8dp"
+                    android:text="Is dangerous?" />
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>

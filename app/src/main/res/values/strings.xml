@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Lumos</string>
+    <string name="asteroid_id">ID</string>
+    <string name="asteroid_diameter">Max diameter (km)</string>
+    <string name="is_asteroid_dangerous">Is dangerous?</string>
+    <string name="asteroid_name">Asteroid Name</string>
+    <string name="is_sentry_object">Is sentry object?</string>
+    <string name="close_approach_date">Close approach date</string>
+    <string name="miss_distance">Miss distance (km)</string>
 </resources>
