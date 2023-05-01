@@ -32,17 +32,17 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project is an implementation of a mobile application for the consumption of NASA's NeoWs API (api.nasa.gov).
+This project is an implementation of a mobile application for the consumption of NASA's NeoWs API ([api.nasa.gov](https://api.nasa.gov/)).
 
 Requirements:
-* The application must be able to be installed on Android version 6.0 Marshmallow or later.
-* The application must have user registration, login and logout.
-* All data must be stored in a local database (SQLite). 4. It must have a minimum of 4 windows.
-* List the data from the Asteroids table in the main window after pressing a button that downloads the data from the API.
-* When selecting an item from the asteroids list, navigate to a window that shows all the information.
-* The asteroid records listed on the main page should correspond only to the logged-in user.
-* Use Git as version control and upload the project to a public repository in GitLab.
-* Generate project documentation (README.md) specifying programming language, database used, libraries used, API information, libraries used, API information and if necessary a user guide of the application including screenshots.
+* [x] The application must be able to be installed on Android version 6.0 Marshmallow or later.
+* [x] The application must have user registration, login and logout.
+* [x] All data must be stored in a local database (SQLite). 4. It must have a minimum of 4 windows.
+* [x] List the data from the Asteroids table in the main window after pressing a button that downloads the data from the API.
+* [x] When selecting an item from the asteroids list, navigate to a window that shows all the information.
+* [x] The asteroid records listed on the main page should correspond only to the logged-in user.
+* [x] Use Git as version control and upload the project to a public repository in GitLab.
+* [x] Generate project documentation (README.md) specifying programming language, database used, libraries used, API information, libraries used, API information and if necessary a user guide of the application including screenshots.
 
 The system has been tested on Poco X3 Pro device running Android 12 (MIUI 13).
 
@@ -88,9 +88,21 @@ The APIKey must be set on the app/res/raw/config.properties file.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+### Login Screen
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+<img src="Assets/AppLogin.jpg" alt="Lomus App Login Screen" style="width:20%;">
+
+### Signup Screen
+
+<img src="Assets/AppSignup.jpg" alt="Lomus App Signup Screen" style="width:20%;">
+
+### Asteroid List
+
+<img src="Assets/AppAsteroidList.jpg" alt="Lomus App Asteroid List Screen" style="width:20%;">
+
+### Asteroid Info
+
+<img src="Assets/AppAsteroidInfo.jpg" alt="Lomus App Asteroid Info Screen" style="width:20%;">
 
 <!-- ROADMAP -->
 ## Roadmap
