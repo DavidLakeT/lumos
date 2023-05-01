@@ -11,7 +11,7 @@ import me.davidlake.lumos.model.asteroid.Asteroid;
 @Entity(tableName = "users")
 public class User {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private String email;
     private String password;
@@ -25,18 +25,16 @@ public class User {
     // CONSTRUCTOR
 
     public User(
-            int id,
             String email,
             String password,
-            String firstName,
-            String lastName,
+            //String firstName,
+            //String lastName,
             String createdAt
     ) {
-        this.id = id;
         this.email = email;
         this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        //this.firstName = firstName;
+        //this.lastName = lastName;
         this.createdAt = createdAt;
     }
 

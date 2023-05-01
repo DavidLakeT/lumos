@@ -1,5 +1,6 @@
 package me.davidlake.lumos.dao;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -32,7 +33,12 @@ public interface UserDAO {
     @Query("SELECT * FROM users WHERE id = :id")
     User getById(int id);
 
-    @Transaction
-    @Query("SELECT * FROM users")
-    List<UserAsteroids> getUsersWithAsteroids();
+    @Query("SELECT * FROM users WHERE email LIKE :email AND password LIKE :password LIMIT 1")
+    User readAllData(String email, String password);
+
+    @Query("SELECT COUNT(*) FROM users WHERE email = :email")
+    int userExists(String email);
+
+    @Query("SELECT * FROM users WHERE email = :email")
+    User getUserByEmail(String email);
 }

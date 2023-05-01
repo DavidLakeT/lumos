@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/email_edit_text"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -51,12 +51,12 @@
             android:background="@drawable/edittext_background"
             android:ems="10"
             android:hint="Email"
-            android:inputType="textPersonName"
+            android:inputType="textEmailAddress"
             android:paddingStart="20dp"
             android:textColorHint="#464646" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/password_edit_text"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -66,12 +66,12 @@
             android:background="@drawable/edittext_background"
             android:ems="10"
             android:hint="Password"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:paddingStart="20dp"
             android:textColorHint="#464646" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/identification_id_edit_text"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -81,7 +81,7 @@
             android:background="@drawable/edittext_background"
             android:ems="10"
             android:hint="Identification ID"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:paddingStart="20dp"
             android:textColorHint="#464646" />
 

@@ -1,26 +1,31 @@
 package me.davidlake.lumos.viewmodel;
 
 import android.app.Application;
+import android.util.Log;
+
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import java.io.IOException;
 import java.util.List;
 import me.davidlake.lumos.MainApp;
+import me.davidlake.lumos.dao.AsteroidDAO;
 import me.davidlake.lumos.database.Database;
 import me.davidlake.lumos.model.asteroid.Asteroid;
 import me.davidlake.lumos.model.asteroid.AsteroidFeed;
 import me.davidlake.lumos.network.NeoApi;
 
 public class AsteroidViewModel extends AndroidViewModel {
-    private MutableLiveData<List<Asteroid>> asteroidList = new MutableLiveData<>();
+    private final MutableLiveData<List<Asteroid>> asteroidList = new MutableLiveData<>();
     private final NeoApi neoApi;
+    private final MainApp app;
+    private final Database database;
 
     public AsteroidViewModel(Application application) {
         super(application);
-        MainApp app = (MainApp) application;
+        app = (MainApp) application;
         neoApi = app.getNeoApi();
-        Database database = app.getDatabase();
+        database = app.getDatabase();
     }
 
     public LiveData<List<Asteroid>> getAsteroidList() {
@@ -32,6 +37,13 @@ public class AsteroidViewModel extends AndroidViewModel {
             try {
                 AsteroidFeed asteroidFeed = neoApi.getAsteroidFeed(startDate, endDate);
                 List<Asteroid> asteroidList = asteroidFeed.getAsteroids().get(startDate);
+                assert asteroidList != null;
+                for(Asteroid asteroid : asteroidList) {
+                    if(asteroid.getUserId() == 0) {
+                        asteroid.setUserId(app.getCurrentUserId());
+                    }
+                    database.asteroidDao().insert(asteroid);
+                }
                 this.asteroidList.postValue(asteroidList);
             } catch (IOException e) {
                 e.printStackTrace();
