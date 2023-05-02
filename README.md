@@ -97,8 +97,6 @@ After you've got your API Key at [api.nasa.gov](https://api.nasa.gov/) you can c
 
 The APIKey must be set on the app/res/raw/config.properties file.
 
-![Android Studio Run](https://user-images.githubusercontent.com/51886804/235525446-ef5de2e5-3cf5-46ae-ac22-bff3bf163082.png)
-
 <!-- USAGE EXAMPLES -->
 ## Usage
 
