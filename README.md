@@ -41,7 +41,7 @@ Requirements:
 * [x] List the data from the Asteroids table in the main window after pressing a button that downloads the data from the API.
 * [x] When selecting an item from the asteroids list, navigate to a window that shows all the information.
 * [x] The asteroid records listed on the main page should correspond only to the logged-in user.
-* [x] Use Git as version control and upload the project to a public repository in GitLab.
+* [x] Use Git as version control and upload the project to a public repository in GitHub/GitLab.
 * [x] Generate project documentation (README.md) specifying programming language, database used, libraries used, API information, libraries used, API information and if necessary a user guide of the application including screenshots.
 
 The system has been tested on Poco X3 Pro device running Android 12 (MIUI 13).
