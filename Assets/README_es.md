@@ -70,8 +70,8 @@ GET https://api.nasa.gov/neo/rest/v1/feed?start_date=START_DATE&end_date=END_DAT
 | Parametro     | Tipo                   | Descripción                                        |
 | :-------------| :----------------------| :--------------------------------------------------|
 | `api_key`     | `string`               | **Default:** "DEMO_KEY" (30 peticiones/hora)       |
-| `start_date`  | `string (date format)` | **Default:** "2023-04-28" (fecha de la entrevista) |
-| `end_date`    | `string (date format)` | **Default:** "2023-04-28" (fecha de la entrevista) |
+| `start_date`  | `string (yyyy-mm-dd)` | **Default:** "2023-04-28" (fecha de la entrevista) |
+| `end_date`    | `string (yyyy-mm-dd)` | **Default:** "2023-04-28" (fecha de la entrevista) |
 
 <!-- GETTING STARTED -->
 ## Primeros pasos
