@@ -4,7 +4,7 @@
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Tabla de Contenido</summary>
+  <summary>Tabla de Contenidos</summary>
   <ol>
     <li>
       <a href="#sobre-el-proyecto">Sobre el Proyecto</a>
@@ -67,9 +67,9 @@ Obtener todos los Objetos Cercanos a la Tierra (NEO) en un intervalo de fechas:
 GET https://api.nasa.gov/neo/rest/v1/feed?start_date=START_DATE&end_date=END_DATE&api_key=API_KEY
 ```
 
-| Parametro     | Tipo                   | Description                                       |
-| :--------     | :----------------------| :-------------------------------------------------|
-| `api_key`     | `string`               | **Default:** "DEMO_KEY" (30 peticiones/hora)      |
+| Parametro     | Tipo                   | Descripción                                        |
+| :-------------| :----------------------| :--------------------------------------------------|
+| `api_key`     | `string`               | **Default:** "DEMO_KEY" (30 peticiones/hora)       |
 | `start_date`  | `string (date format)` | **Default:** "2023-04-28" (fecha de la entrevista) |
 | `end_date`    | `string (date format)` | **Default:** "2023-04-28" (fecha de la entrevista) |
 
