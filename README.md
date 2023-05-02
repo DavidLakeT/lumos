@@ -90,19 +90,19 @@ The APIKey must be set on the app/res/raw/config.properties file.
 
 ### Login Screen
 
-<img src="Assets/AppLogin.jpg" alt="Lomus App Login Screen" style="width:20%;">
+<img src="Assets/AppLogin.jpg" alt="Lomus App Login Screen" style="width:32%;">
 
 ### Signup Screen
 
-<img src="Assets/AppSignup.jpg" alt="Lomus App Signup Screen" style="width:20%;">
+<img src="Assets/AppSignup.jpg" alt="Lomus App Signup Screen" style="width:32%;">
 
 ### Asteroid List
 
-<img src="Assets/AppAsteroidList.jpg" alt="Lomus App Asteroid List Screen" style="width:20%;">
+<img src="Assets/AppAsteroidList.jpg" alt="Lomus App Asteroid List Screen" style="width:32%;">
 
 ### Asteroid Info
 
-<img src="Assets/AppAsteroidInfo.jpg" alt="Lomus App Asteroid Info Screen" style="width:20%;">
+<img src="Assets/AppAsteroidInfo.jpg" alt="Lomus App Asteroid Info Screen" style="width:32%;">
 
 <!-- ROADMAP -->
 ## Roadmap
