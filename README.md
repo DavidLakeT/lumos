@@ -27,7 +27,7 @@
   </ol>
 </details>
 
-
+For spanish version, check [README_es](Assets/README_es.md).
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
