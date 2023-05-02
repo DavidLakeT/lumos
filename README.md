@@ -37,7 +37,8 @@ This project is an implementation of a mobile application for the consumption of
 Requirements:
 * [x] The application must be able to be installed on Android version 6.0 Marshmallow or later.
 * [x] The application must have user registration, login and logout.
-* [x] All data must be stored in a local database (SQLite). 4. It must have a minimum of 4 windows.
+* [x] All data must be stored in a local database (SQLite).
+* [x] It must have a minimum of 4 windows.
 * [x] List the data from the Asteroids table in the main window after pressing a button that downloads the data from the API.
 * [x] When selecting an item from the asteroids list, navigate to a window that shows all the information.
 * [x] The asteroid records listed on the main page should correspond only to the logged-in user.
