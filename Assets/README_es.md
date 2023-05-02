@@ -108,19 +108,19 @@ Si el usuario desea consultar la información con más detalle, puede hacer clic
 
 ### Inicio de sesión
 
-<img src="Assets/AppLogin.jpg" alt="Lomus App Login Screen" style="width:32%;">
+<img src="AppLogin.jpg" alt="Lomus App Login Screen" style="width:32%;">
 
 ### Registro
 
-<img src="Assets/AppSignup.jpg" alt="Lomus App Signup Screen" style="width:32%;">
+<img src="AppSignup.jpg" alt="Lomus App Signup Screen" style="width:32%;">
 
 ### Lista de asteroides
 
-<img src="Assets/AppAsteroidList.jpg" alt="Lomus App Asteroid List Screen" style="width:32%;">
+<img src="AppAsteroidList.jpg" alt="Lomus App Asteroid List Screen" style="width:32%;">
 
 ### Información de asteroide
 
-<img src="Assets/AppAsteroidInfo.jpg" alt="Lomus App Asteroid Info Screen" style="width:32%;">
+<img src="AppAsteroidInfo.jpg" alt="Lomus App Asteroid Info Screen" style="width:32%;">
 
 <!-- ROADMAP -->
 ## Planeación
