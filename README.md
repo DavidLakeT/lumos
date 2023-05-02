@@ -58,6 +58,20 @@ This project was built using the following tools/libraries:
 * [Stetho](https://github.com/facebookarchive/stetho/releases/tag/v1.5.1)
 * [CircleImageView](https://github.com/hdodenhof/CircleImageView/releases/tag/v3.1.0)
 
+### API endpoints
+
+Get all Near Earth Objects (NEO) from a certain date range:
+
+```
+GET https://api.nasa.gov/neo/rest/v1/feed?start_date=START_DATE&end_date=END_DATE&api_key=API_KEY
+```
+
+| Parameter     | Type                   | Description                                |
+| :--------     | :----------------------| :------------------------------------------|
+| `api_key`     | `string`               | **Default:** "DEMO_KEY" (30 requests/hour) |
+| `start_date` | `string (date format)` | **Default:** "2023-04-28" (interview date) |
+| `end_date`   | `string (date format)` | **Default:** "2023-04-28" (interview date) |
+
 <!-- GETTING STARTED -->
 ## Getting Started
 
@@ -87,6 +101,11 @@ The APIKey must be set on the app/res/raw/config.properties file.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+
+The application offers the user the possibility of registering by entering information such as first name, last name, ID and others. It also presents the functionality to log in. 
+When any of these options is done correctly, the user will be presented with a view of the list of asteroids built with the information acquired from the API.
+
+If the user wishes to consult the information in more detail, he/she can click on any asteroid in the list and access a menu with more precise information.
 
 ### Login Screen
 
