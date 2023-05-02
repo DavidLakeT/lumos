@@ -28,4 +28,6 @@
     <string name="asteroid_id_text">Asteroid ID</string>
     <string name="asteroid_diameter_title">Asteroid Diameter</string>
     <string name="is_dangerous_title">Is dangerous?</string>
+    <string name="welcome_message">Welcome\n%s %s</string>
+    <string name="asteroid_load_message">Loading asteroid info…</string>
 </resources>

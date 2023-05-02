@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toast.makeText(getApplicationContext(), "Loading asteroid info...", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), getString(R.string.asteroid_load_message), Toast.LENGTH_SHORT).show();
 
         asteroidViewModel = new ViewModelProvider(this).get(AsteroidViewModel.class);
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
@@ -36,7 +36,9 @@ public class MainActivity extends AppCompatActivity {
         userViewModel.loadUser(userViewModel.getCurrentUserId());
 
         userViewModel.getUserInfo().observe(this, userInfo -> {
-            welcomeTextView.setText("Welcome\n" + userInfo.getFirstName() + " " + userInfo.getLastName());
+            String welcomeMessage = getString(R.string.welcome_message);
+            String formattedMessage = String.format(welcomeMessage, userInfo.getFirstName(), userInfo.getLastName());
+            welcomeTextView.setText(formattedMessage);
         });
 
 
