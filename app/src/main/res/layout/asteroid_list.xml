@@ -31,7 +31,7 @@
                     android:id="@+id/asteroid_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Asteroid Name"
+                    android:text="@string/asteroid_name_title"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
@@ -41,23 +41,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Asteroid ID"/>
+                    android:text="@string/asteroid_id_text"/>
 
                 <TextView
                     android:id="@+id/asteroid_diameter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="8dp"
-                    android:text="Asteroid Diameter" />
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/asteroid_diameter_title" />
 
                 <TextView
                     android:id="@+id/asteroid_is_dangerous"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="8dp"
-                    android:text="Is dangerous?" />
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/is_dangerous_title" />
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>

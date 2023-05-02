@@ -1,13 +1,17 @@
 package me.davidlake.lumos.viewmodel;
 
 import android.app.Application;
+import android.util.Log;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import java.util.List;
+
 import me.davidlake.lumos.MainApp;
 import me.davidlake.lumos.database.Database;
+import me.davidlake.lumos.model.asteroid.Asteroid;
 import me.davidlake.lumos.model.user.User;
 
 public class UserViewModel extends AndroidViewModel {
@@ -22,6 +26,7 @@ public class UserViewModel extends AndroidViewModel {
     }
 
     public void setCurrentUserId(int id) { app.setCurrentUserId(id); }
+    public int getCurrentUserId() { return app.getCurrentUserId(); }
 
     public LiveData<User> checkUser(String email, String password) {
         MutableLiveData<User> userLiveData = new MutableLiveData<>();
@@ -32,6 +37,15 @@ public class UserViewModel extends AndroidViewModel {
         }).start();
 
         return userLiveData;
+    }
+
+    public LiveData<User> getUserInfo() { return userInfo; }
+
+    public void loadUser(int id) {
+        new Thread(() -> {
+            Log.d("DAVID-DEBUG", "ID: " + id + " INFO: " + database.userDao().getById(id));
+            userInfo.postValue(database.userDao().getById(id));
+        }).start();
     }
 
     public LiveData<User> registerUser(String email, String password, String firstName, String lastName, String identificationId) {

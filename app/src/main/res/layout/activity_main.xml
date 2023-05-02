@@ -5,11 +5,42 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
+    <RelativeLayout
+        android:id="@+id/relative_asteroid_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground"
+        android:paddingVertical="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/welcome_text_view"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="serif-monospace"/>
+
+        <View
+            android:layout_below="@+id/welcome_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/underline"
+            android:layout_marginTop="5dp"/>
+
+    </RelativeLayout>
+
     <ListView
+        android:layout_marginTop="70dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/listview"
-        tools:listitem="@layout/asteroid_list"/>
+        tools:listitem="@layout/asteroid_list" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

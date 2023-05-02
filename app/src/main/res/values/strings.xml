@@ -24,4 +24,8 @@
     <string name="invalid_credentials">Invalid credentials</string>
     <string name="already_existing_user">User already exists</string>
     <string name="user_id">User ID</string>
+    <string name="asteroid_name_title">Asteroid Name</string>
+    <string name="asteroid_id_text">Asteroid ID</string>
+    <string name="asteroid_diameter_title">Asteroid Diameter</string>
+    <string name="is_dangerous_title">Is dangerous?</string>
 </resources>
